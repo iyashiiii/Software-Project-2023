@@ -13,12 +13,12 @@ from PIL import Image, ImageTk
 from openpyxl import load_workbook
 
 # ADMIN ACCESS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-with open(r"C:\Users\21-258831\Desktop\admin.txt") as c:
+with open(r"C:\Users\kayth\Desktop\admin.txt") as c:
     l = c.read().split('\n')
     
     
 # EXCEL FILE FOR DATA ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-path = r'C:\Users\21-258831\Desktop\data.xlsx'
+path = r'C:\Users\kayth\Desktop\data.xlsx'
 wb = load_workbook(filename=path, read_only=False)
 ws = wb.active
   
@@ -62,7 +62,7 @@ class app():
         if s.txt in l and s.txt2 in l:
             s.new_window()
         else:
-            messagebox.showinfo(title='Message', message='Invalid username and password')
+            messagebox.showerror(title='Message', message='Invalid username and password')
             
 # upload function for product image --
     def upload(s):
@@ -132,7 +132,7 @@ class app():
         for row in range(1, s.fws.max_row):
             for col in s.fws.iter_cols(2,2):
                 if col[row].value ==  s.product_sel:
-                    print('Hello world')
+                    #print('Hello world')
                     messagebox.showinfo(title='Message', message='Data saved')
         
         
