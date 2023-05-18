@@ -83,6 +83,8 @@ class app():
 
 # place data in excel from New Product page -- 
     def data(s):
+        
+        
         s.conn = sqlite3.connect('data.db')
         s.table = '''CREATE TABLE IF NOT EXISTS Clothing_Management
                 (Product_ID INT, Product_Name TEXT, Category TEXT, Description TEXT, Price INT, XS TEXT, S TEXT, M TEXT, L TEXT, XL TEXT, XXL TEXT, Sales INT)'''
