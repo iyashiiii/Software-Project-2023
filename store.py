@@ -11,6 +11,7 @@ from tkinter import filedialog
 from tkinter.filedialog import askopenfile
 from PIL import Image, ImageTk
 from openpyxl import load_workbook
+import sqlite3
 
 # ADMIN ACCESS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 with open(r"C:\Users\kayth\Desktop\admin.txt") as c:
@@ -82,47 +83,16 @@ class app():
 
 # place data in excel from New Product page -- 
     def data(s):
-        s.product_name = s.pn1.get()
-        s.product_category = s.pc1.get()
-        s.product_desc = s.pd1.get('1.0',tk.END)
-        s.product_price = s.price1.get()
-        s.variation = s.colorvar.get('1.0',tk.END)
+        s.conn = sqlite3.connect('data.db')
+        s.table = '''CREATE TABLE IF NOT EXISTS Clothing_Management
+                (Product_ID INT, Product_Name TEXT, Category TEXT, Description TEXT, Price INT, XS TEXT, S TEXT, M TEXT, L TEXT, XL TEXT, XXL TEXT, Sales INT)'''
+        s.conn.execute(s.table)
         
-        s.l0 = []
         
-        if s.checkbox.get() == 1:
-            s.l0.append('/')
-        else:
-            s.l0.append('')
-        if s.checkbox2.get() == 1:
-            s.l0.append('/')
-        else:
-            s.l0.append('')
-        if s.checkbox3.get() == 1:
-            s.l0.append('/')
-        else:
-            s.l0.append('')
-        if s.checkbox4.get() == 1:
-            s.l0.append('/')
-        else:
-            s.l0.append('')
-        if s.checkbox5.get() == 1:
-            s.l0.append('/')
-        else:
-            s.l0.append('')
-        if s.checkbox6.get() == 1:
-            s.l0.append('/')
-        else:
-            s.l0.append('')
         
-        s.i = ws.max_row
-        s.i+=1
-        s.entered_data = [s.i, s.product_name, s.product_category, s.product_desc, s.product_price, s.variation]
-        s.final = s.entered_data + s.l0
-        print(s.final)
-        ws.append(s.final)
-        wb.save(path)
-        messagebox.showinfo(title='Message', message='Data saved')
+        s.conn.close()
+        
+
 
 # place sales data in excel from Enter Sales page -- 
     def data_label(s):
@@ -279,11 +249,4 @@ class app():
         
         # Iterate the loop to read the cell values
         
-        
-    
-        
-        
-    
-            
-
 app()
