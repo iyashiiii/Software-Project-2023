@@ -11,18 +11,11 @@ from tkinter import filedialog
 from tkinter import ttk
 from tkinter.filedialog import askopenfile
 from PIL import Image, ImageTk
-from openpyxl import load_workbook
 import sqlite3
 
 # ADMIN ACCESS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 with open(r"C:\Users\kayth\Desktop\admin.txt") as c:
     l = c.read().split('\n')
-    
-    
-# EXCEL FILE FOR DATA ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-path = r'C:\Users\kayth\Desktop\data.xlsx'
-wb = load_workbook(filename=path, read_only=False)
-ws = wb.active
   
 # INITIAL WINDOW ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class app():
