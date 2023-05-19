@@ -66,6 +66,11 @@ class app():
         else:
             messagebox.showerror(title='Message', message='Invalid username and password')
             
+    def closing(s):
+        s.cc = messagebox.askquestion('Close', 'Exit?')
+        if s.cc == 'yes':
+            s.main.destroy()
+            
 # upload function for product image --
     def upload(s):
         s.f_types = [('JPG','*.jpg'),('PNG','*.png'),('JPEG','*.jpeg')]
@@ -368,7 +373,7 @@ class app():
         
         s.frame.pack(fill='x')
         
-        s.close = tk.Button(s.main, text='Close', font=('Arial', 16), width=8, background='#FFCBCB', command = s.main.destroy())
+        s.close = tk.Button(s.main, text='Close', font=('Arial', 16), width=8, background='#FFCBCB', command = s.closing)
         s.close.pack(side='bottom', pady=30)
         
         s.root.destroy()
