@@ -1,7 +1,7 @@
 # ESSENTIAL FILES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     #1. main.py    -- main program
     #2. admin.txt  -- admin username and password
-    #3. excel file -- for overall database
+    #3. db browser -- for database via mysql
 
 # IMPORTS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from tkinter import *
