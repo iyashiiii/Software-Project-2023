@@ -354,21 +354,21 @@ class app():
         s.frame = tk.Frame(s.main)
         s.frame.columnconfigure(0, weight=1)
         
-        s.btn1 = tk.Button(s.frame, text='New product', font=('Arial', 18), background='#FEFEBE', command = s.window1)
+        s.btn1 = tk.Button(s.frame, text='New Product', font=('Arial', 18), background='#FEFEBE', command = s.window1)
         s.btn1.grid(row=0, column=0, sticky='news')
         
-        s.btn2 = tk.Button(s.frame, text='Enter sales', font=('Arial', 18), background='#C7F6B6', command = s.window2)
+        s.btn2 = tk.Button(s.frame, text='Enter Sales', font=('Arial', 18), background='#C7F6B6', command = s.window2)
         s.btn2.grid(row=1, column=0, sticky='news')
         
-        s.btn3 = tk.Button(s.frame, text='Manage inventory', font=('Arial', 18), background='#F4E3FF', command = s.window3)
+        s.btn3 = tk.Button(s.frame, text='Manage Inventory', font=('Arial', 18), background='#F4E3FF', command = s.window3)
         s.btn3.grid(row=2, column=0, sticky='news')
         
-        s.btn4 = tk.Button(s.frame, text='Product stats', font=('Arial', 18), background='#FBBF77', command = s.window4)
+        s.btn4 = tk.Button(s.frame, text='Product Stats', font=('Arial', 18), background='#FBBF77', command = s.window4)
         s.btn4.grid(row=3, column=0, sticky='news')
         
         s.frame.pack(fill='x')
         
-        s.close = tk.Button(s.main, text='Close', font=('Arial', 16), width=8, background='#FFCBCB')
+        s.close = tk.Button(s.main, text='Close', font=('Arial', 16), width=8, background='#FFCBCB', command = s.main.destroy())
         s.close.pack(side='bottom', pady=30)
         
         s.root.destroy()
