@@ -275,7 +275,7 @@ class app():
     def data_label5(s):
         s.gget = [s.menuw.get()]
         
-        s.prnm = tk.Label(s.win4, text=s.gget, font=('Arial 16 bold underline'), height=2)
+        s.prnm = tk.Label(s.win4, text=f'Product: {s.gget[0]}', font=('Verdana 16 bold italic'), height=2)
         s.prnm.pack(padx = 20, pady = 5, anchor='nw')#(x=90, y=30)
         
         s.conn = sqlite3.connect('data.db')
@@ -302,19 +302,19 @@ class app():
         s.sales__ = s.cursor.fetchone()
         s.sales_ = s.sales__[0]
         
-        s.prnm2 = tk.Label(s.win4, text=f'Price: P{s.price_}', font=('Arial 12 bold'), fg='green')
+        s.prnm2 = tk.Label(s.win4, text=f'Price: P{s.price_}', font=('Verdana 12'))
         s.prnm2.pack(padx = 20, pady = 5, anchor='nw')#(x=90, y=30)
         
-        s.prnm3 = tk.Label(s.win4, text=f'Current stock: {s.stock_}', font=('Arial 12 bold'), fg='orange')
+        s.prnm3 = tk.Label(s.win4, text=f'Current stock: {s.stock_}', font=('Verdana 12'))
         s.prnm3.pack(padx = 20, pady = 5, anchor='nw')#(x=90, y=30)
         
-        s.prnm4 = tk.Label(s.win4, text=f'Currently sold: {s.sales_}', font=('Arial 12 bold'), fg='purple')
+        s.prnm4 = tk.Label(s.win4, text=f'Currently sold: {s.sales_}', font=('Verdana 12'))
         s.prnm4.pack(padx = 20, pady = 5, anchor='nw')#(x=90, y=30)
         
         s.tsales = int(s.price_) * int(s.sales_)
         
         
-        s.totalsales = tk.Label(s.win4, text=f'Total Sales: Php {s.tsales}', font=('Arial 16 bold underline'), fg='blue')
+        s.totalsales = tk.Label(s.win4, text=f'Total Sales: Php {s.tsales}', font=('Verdana 16 bold'))
         s.totalsales.pack(padx = 20, pady = 5, anchor='nw')#(x=90, y=30)
     ''' 
     def handle(s):
